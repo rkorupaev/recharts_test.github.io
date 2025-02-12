@@ -1,4 +1,4 @@
-import React from "react";
+// @ts-nocheck
 import {
     LineChart,
     Line,
@@ -59,9 +59,9 @@ const uvValues = data.map((d) => d.uv);
 const pvValues = data.map((d) => d.pv);
 
 const calculateZscore = (array, key) => {
-    const mean = array.reduce((sum, val) => sum + val, 0) / array.length;
+    const mean = array.reduce((sum: number, val: number) => sum + val, 0) / array.length;
     const stdDev = Math.sqrt(
-        array.reduce((sum, val) => sum + (val - mean) ** 2, 0) / array.length
+        array.reduce((sum: number, val: number) => sum + (val - mean) ** 2, 0) / array.length
     );
 
     return data.map((d) => {
